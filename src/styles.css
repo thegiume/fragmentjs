@@ -1,0 +1,199 @@
+/* 1. Importa tutto Tailwind v4 (base, components, utilities e variabili di tema) */
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+
+/* 2. Definizione CSS-first di tutti i token di tema */
+@theme {
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+  --color-element-on-white: #F8F8F8;
+  --color-black: #101214;
+  --color-element-on-black: #232527;
+  --color-border-grey: #F0F0F0;
+  --color-ui-color: #8EDA36;
+  --color-ui-color-light: #E4F6D1;
+  --color-ui-color2: #D94694;
+  --color-ui-color2-light: #F4D0E4;
+  --color-ui-color3: #4694D9;
+  --color-ui-color3-light: #D2E5F5;
+  --color-white-text: #CFD0D0;
+  --color-red: #EB6367;
+
+  --font-noto-sans: "Noto Sans", sans-serif;
+  --background-image-logo: url('/img/logo.png');
+}
+
+/* 3. Layer BASE personalizzato */
+@layer base {
+  /* nascondo la scrollbar su WebKit */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  /* disabilito tap-highlight e selezione testo */
+  button,
+  textarea,
+  input,
+  select,
+  a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  input:focus,
+  textarea:focus,
+  select:focus,
+  button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+/* 4. Layer COMPONENTS personalizzato */
+@layer components {
+  .vertical-align {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .horizontal-align {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .full-center-align {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+/* Component: body background/layout e bottone primario */
+@layer components {
+  .app-bg {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    color: var(--color-white);
+    background: radial-gradient(80rem 40rem at -10% -10%, color-mix(in oklab, var(--color-ui-color) 25%, transparent), transparent),
+                radial-gradient(70rem 40rem at 120% 10%, color-mix(in oklab, var(--color-ui-color3) 22%, transparent), transparent),
+                radial-gradient(80rem 40rem at 110% 110%, color-mix(in oklab, var(--color-ui-color) 20%, transparent), transparent),
+                radial-gradient(70rem 40rem at -10% 110%, color-mix(in oklab, var(--color-ui-color3) 20%, transparent), transparent),
+                linear-gradient(180deg, var(--color-black), var(--color-element-on-black));
+  }
+
+  .btn-primary,
+  .ui-btn-primary {
+    --accent: var(--color-ui-color);
+    position: relative;
+    overflow: hidden;
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    width: auto;
+    justify-self: center;
+    padding: 0.5rem 1rem;
+    min-height: 2.5rem;
+    border-radius: 999px;
+    color: #0F172A;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    background:
+      linear-gradient(180deg,
+        color-mix(in oklab, var(--accent) 25%, transparent) 0%,
+        color-mix(in oklab, var(--accent) 15%, transparent) 45%,
+        rgba(255, 255, 255, 0.08) 100%),
+      color-mix(in oklab, var(--accent) 85%, transparent);
+    border: 1px solid color-mix(in oklab, var(--accent) 38%, transparent);
+    box-shadow:
+      0 6px 14px color-mix(in oklab, var(--accent) 18%, transparent),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow, background;
+    transition: box-shadow .28s ease, border-color .2s ease;
+    cursor: pointer;
+  }
+  /* highlight superiore glossy */
+  .btn-primary::after,
+  .ui-btn-primary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.08) 28%, rgba(255, 255, 255, 0) 45%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    transform: translateZ(2px);
+  }
+  /* bagliore liquido che si muove leggermente */
+  .btn-primary::before,
+  .ui-btn-primary::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background:
+      radial-gradient(40% 35% at 30% 20%, color-mix(in oklab, var(--accent) 30%, transparent) 0%, transparent 60%),
+      radial-gradient(35% 30% at 80% 90%, rgba(255, 255, 255, 0.28) 0%, transparent 55%);
+    filter: blur(12px);
+    opacity: .75;
+    pointer-events: none;
+    transform: translate3d(0,0,0) scale(1);
+    transition: transform .6s cubic-bezier(.22,.9,.3,1), opacity .6s ease;
+    mix-blend-mode: screen;
+  }
+  .btn-primary:hover {
+    box-shadow:
+      0 8px 20px color-mix(in oklab, var(--accent) 22%, transparent),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+    border-color: color-mix(in oklab, var(--accent) 55%, transparent);
+  }
+  .btn-primary:active {
+    box-shadow:
+      0 4px 12px color-mix(in oklab, var(--accent) 15%, transparent),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  }
+  .btn-primary:hover::before,
+  .ui-btn-primary:hover::before {
+    transform: scale(1.04) translate(4px, -4px);
+    opacity: 1;
+  }
+}
+
+/* 5. Animazioni moderne */
+@layer utilities {
+  @keyframes in-float {
+    0% {
+      opacity: 0;
+      transform: translateY(18px) scale(.98);
+      filter: blur(6px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-2px) scale(1);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+  .animate-in-float {
+    animation: in-float 1.2s cubic-bezier(.22,.9,.3,1) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-in-float {
+      animation: none !important;
+    }
+  }
+}
