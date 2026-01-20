@@ -22,7 +22,7 @@ async function bootstrap() {
   app.use(express.static(publicPath));
 
   // Fallback SPA: serve index.html per le rotte client-side (es. /about)
-  app.get('*', (req, res, next) => {
+  app.get('/*', (req, res, next) => {
     if (req.method !== 'GET') {
       return next();
     }
