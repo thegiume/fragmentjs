@@ -2,7 +2,7 @@
 <html>
     <head>
         <base href="/">
-        <title>Fixor Login</title>
+        <title>FragmentJS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/lib/css/styles.css">
@@ -17,22 +17,290 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-        <script type="text/javascript" src="lib/js/lazify.config.js"></script>
-        <script type="text/javascript" src="lib/js/lazify.js"></script>
         <script type="text/javascript" src="lib/js/system.js"></script>
+        <style>
+            @font-face {
+                font-family: "Seona";
+                src: url("/lib/font/Seona-DEMO.otf") format("opentype");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            .font-seona {
+                font-family: "Seona", "Noto Sans", sans-serif;
+            }
+        </style>
     </head>
-    <body class="font-noto-sans bg-gray-100 text-gray-900">
-        <include src="lib/html/header.html"></include>
+    <body class="font-noto-sans bg-[#060510] text-white antialiased selection:bg-fuchsia-500/40 selection:text-white">
+        <div class="relative min-h-screen overflow-x-hidden bg-[#060510]">
+            <div class="pointer-events-none absolute -top-40 left-1/2 h-104 w-xl -translate-x-1/2 rounded-full bg-indigo-500/25 blur-[140px]"></div>
+            <div class="pointer-events-none absolute top-1/3 -right-24 h-88 w-88 rounded-full bg-cyan-400/20 blur-[120px]"></div>
+            <div class="pointer-events-none absolute bottom-0 -left-32 h-96 w-96 rounded-full bg-fuchsia-500/20 blur-[140px]"></div>
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(129,140,248,0.18),transparent_50%)]"></div>
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(14,165,233,0.16),transparent_55%)]"></div>
 
-        <nav class="sticky top-0 z-10 flex items-center gap-3 bg-gray-900 px-5 py-3 text-gray-50 shadow-lg">
-            <button type="button" class="rounded-md px-3 py-2 hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500" onclick="FragmentJS.navigateTo('/')">Home</button>
-            <button type="button" class="rounded-md px-3 py-2 hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500" onclick="FragmentJS.navigateTo('/about')">About</button>
-            <button type="button" class="rounded-md px-3 py-2 hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500" onclick="FragmentJS.navigateTo('/contatti')">Contatti</button>
-        </nav>
+            <nav class="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-linear-to-b from-[#060510]/55 via-[#060510]/40 to-[#060510]/20 backdrop-blur-2xl shadow-[0_10px_32px_-20px_rgba(79,70,229,0.35)]">
+                <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+                    <div class="flex items-center">
+                        <span class="font-seona text-2xl tracking-wide text-white">FragmentJS</span>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2 text-sm">
+                        <button type="button" class="cursor-pointer inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/50 px-4 py-2 text-white shadow-[0_0_20px_rgba(59,130,246,0.12)] transition hover:border-white/10 hover:text-white hover:shadow-[0_0_25px_rgba(14,165,233,0.35)]" onclick="FragmentJS.navigateTo('/')">
+                            <i class="fa-solid fa-house"></i>
+                            Overview
+                        </button>
+                        <button type="button" class="cursor-pointer inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/50 px-4 py-2 text-white shadow-[0_0_20px_rgba(59,130,246,0.12)] transition hover:border-white/10 hover:text-white hover:shadow-[0_0_25px_rgba(14,165,233,0.35)]" onclick="FragmentJS.navigateTo('/guida')">
+                            <i class="fa-solid fa-book"></i>
+                            Guide
+                        </button>
+                        <button type="button" class="cursor-pointer inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/50 px-4 py-2 text-white shadow-[0_0_20px_rgba(59,130,246,0.12)] transition hover:border-white/10 hover:text-white hover:shadow-[0_0_25px_rgba(14,165,233,0.35)]" onclick="FragmentJS.navigateTo('/api')">
+                            <i class="fa-solid fa-code"></i>
+                            API
+                        </button>
+                        <button type="button" class="cursor-pointer inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/50 px-4 py-2 text-white shadow-[0_0_20px_rgba(59,130,246,0.12)] transition hover:border-white/10 hover:text-white hover:shadow-[0_0_25px_rgba(14,165,233,0.35)]" onclick="FragmentJS.navigateTo('/architettura')">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            Architecture
+                        </button>
+                        <button type="button" class="cursor-pointer inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/50 px-4 py-2 text-white shadow-[0_0_20px_rgba(59,130,246,0.12)] transition hover:border-white/10 hover:text-white hover:shadow-[0_0_25px_rgba(14,165,233,0.35)]" onclick="FragmentJS.navigateTo('/esempi')">
+                            <i class="fa-solid fa-flask"></i>
+                            Examples
+                        </button>
+                    </div>
+                </div>
+            </nav>
 
-        <section fragment="/sections/home.html"></section>
-        <section fragment="/sections/about.html"></section>
-        <section fragment="/sections/contatti.html"></section>
+            <main data-fragment-slot class="relative z-10 pt-24"></main>
+
+            <section fragment="/sections/overview.html"></section>
+            <section fragment="/sections/guide.html"></section>
+            <section fragment="/sections/api.html"></section>
+            <section fragment="/sections/architecture.html"></section>
+            <section fragment="/sections/examples.html"></section>
+
+            <footer class="relative z-10 border-t border-white/10 bg-linear-to-r from-[#060510]/95 via-[#060510]/85 to-[#060510]/95">
+                <div class="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 px-6 py-10 text-sm text-white">
+                    <p>FragmentJS • Lightweight library for HTML includes and routing.</p>
+                    <div class="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-white">
+                        <span>Language</span>
+                        <button type="button" id="lang-it" class="cursor-pointer rounded-full border border-white/10 bg-slate-900/60 px-3 py-1 text-white">IT</button>
+                        <button type="button" id="lang-en" class="cursor-pointer rounded-full border border-white/10 bg-slate-900/60 px-3 py-1 text-white">EN</button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+            (function() {
+                const enToIt = {
+                    "Overview": "Panoramica",
+                    "Guide": "Guida",
+                    "Architecture": "Architettura",
+                    "Examples": "Esempi",
+                    "Includes + Routing": "Include + Routing",
+                    "The minimal library to compose HTML pages and handle navigation without a framework.": "La libreria minimal per comporre pagine HTML e gestire la navigazione senza framework.",
+                    "FragmentJS loads HTML fragments using the": "FragmentJS carica frammenti HTML con l'attributo",
+                    "shows and hides sections with the": "mostra e nasconde sezioni con classe",
+                    "updates history and triggers callbacks for dynamic data.": "aggiorna la history e invoca callback per dati dinamici.",
+                    "Go to guide": "Vai alla guida",
+                    "Explore API": "Esplora API",
+                    "Size": "Peso",
+                    "Dependencies": "Dipendenze",
+                    "jQuery only": "Solo jQuery",
+                    "An ultra-light layer on top of HTML and jQuery to build small SPAs, internal dashboards, or technical microsites": "Un layer ultraleggero sopra HTML e jQuery per costruire SPA piccole, dashboard interne o micrositi tecnici",
+                    "with full control over markup.": "con controllo totale sul markup.",
+                    "Central config": "Configurazione centrale",
+                    "Define routes, menu and callbacks in": "Definisci rotte, menu e callback in",
+                    "to control the flow.": "per controllare il flusso.",
+                    "Modular sections": "Sezioni modulari",
+                    "Each page is an HTML section with a unique id and the": "Ogni pagina e una sezione HTML con id univoco e classe",
+                    "Instant refresh": "Refresh immediato",
+                    "Force the current route with": "Forza la route corrente con",
+                    "to realign UI and data.": "per riallineare UI e dati.",
+                    "Typical use cases": "Casi d'uso tipici",
+                    "Internal dashboards": "Dashboard interne",
+                    "fast routing": "routing rapido",
+                    "Technical microsites": "Micrositi tecnici",
+                    "modular includes": "include modulari",
+                    "Legacy tooling": "Tooling legacy",
+                    "Rapid prototypes": "Prototipi rapidi",
+                    "Why FragmentJS": "Perche FragmentJS",
+                    "Keep full control over HTML, CSS, and assets. No bundler, no heavy runtime.": "Mantieni controllo totale su HTML, CSS e asset. Nessun bundler, nessun runtime pesante.",
+                    "Just a minimal core and a central config.": "Solo un core minimale e una config centrale.",
+                    "Lightweight routing": "Routing leggero",
+                    "Data hooks": "Hook dati",
+                    "Enable debug: true to bust include cache during development.": "Attiva debug: true per bypassare la cache degli include durante lo sviluppo.",
+                    "Ideal workflow": "Workflow ideale",
+                    "1. Define routes and menu.": "1. Definisci route e menu.",
+                    "2. Create standalone HTML sections.": "2. Crea sezioni HTML indipendenti.",
+                    "3. Attach data hooks with onNavigate.": "3. Aggancia hook dati con onNavigate.",
+                    "4. Navigate with FragmentJS.navigateTo().": "4. Naviga con FragmentJS.navigateTo().",
+                    "Practical guide": "Guida operativa",
+                    "Build your micro-site in a few steps.": "Metti in piedi il tuo micro-sito in pochi step.",
+                    "FragmentJS works on plain HTML: separate layout and sections, then let the router show only what is needed.": "FragmentJS lavora su HTML puro: separa layout e sezioni, poi lascia che il router mostri solo cio che serve.",
+                    "1. Import the scripts": "1. Importa gli script",
+                    "Keep the order: jQuery, config, core.": "Rispetta l'ordine: jQuery, config, core.",
+                    "2. Configure the routes": "2. Configura le route",
+                    "Decide which sections to show for each path.": "Decidi quali sezioni mostrare per ogni path.",
+                    "3. Add the sections": "3. Aggiungi le sezioni",
+                    "Each section is an HTML file with the": "Ogni sezione e un file HTML con classe",
+                    "and a unique id.": "e id univoco.",
+                    "4. Control the UI": "4. Controlla la UI",
+                    "Use navigateTo to change pages and refresh to realign the UI.": "Usa navigateTo per cambiare pagina e refresh per riallineare la UI.",
+                    "File map": "Mappa dei file",
+                    "Organize the project by sections and config, so each page is isolated.": "Organizza il progetto per sezioni e config, cosi ogni pagina e isolata.",
+                    "Pre-launch checklist": "Checklist pre-lancio",
+                    "Fallback route configured.": "Fallback route configurata.",
+                    "Each section has an id and fragment class.": "Ogni sezione ha id e classe fragment.",
+                    "Menu matches menuItem.": "Menu coerente con menuItem.",
+                    "Debug disabled in production.": "Debug disattivato in produzione.",
+                    "Data hooks and menu": "Hook dati e menu",
+                    "In onNavigate you can load data, highlight the menu, or update the header.": "In onNavigate puoi caricare dati, evidenziare il menu o aggiornare header.",
+                    "Debug mode": "Debug mode",
+                    "When debug is enabled, FragmentJS appends a timestamp to includes to avoid cache.": "Se debug e attivo, FragmentJS aggiunge un timestamp agli include per evitare cache.",
+                    "Recommended workflow": "Workflow consigliato",
+                    "1. Design the routes.": "1. Progetta le route.",
+                    "2. Create the section files.": "2. Crea i file section.",
+                    "3. Connect data hooks.": "3. Collega hook dati.",
+                    "4. Test back/forward.": "4. Testa back/forward.",
+                    "API Reference": "Riferimento API",
+                    "Full control in a few functions.": "Tutto il controllo in poche funzioni.",
+                    "FragmentJS APIs are intentionally minimal. Here you will find the public methods and config options.": "Le API di FragmentJS restano intenzionalmente minimal. Qui trovi i metodi pubblici e le opzioni di config.",
+                    "Core methods": "Metodi principali",
+                    "Updates the URL and shows the route sections.": "Aggiorna URL e mostra le sezioni della route corrispondente.",
+                    "Reloads the current route without changing the URL.": "Ricarica la route corrente senza cambiare URL.",
+                    "Re-reads all elements with the fragment attribute not yet included.": "Rilegge tutti gli elementi con attributo fragment non inclusi.",
+                    "Normalizes a URL into pathname, query, and hash.": "Normalizza un URL in pathname, query e hash.",
+                    "Includes and utilities": "Include e utility",
+                    "Loads an HTML file and replaces the original element.": "Carica un file HTML e sostituisce l'elemento originale.",
+                    "jQuery shortcut to load HTML from an endpoint.": "Shortcut jQuery per caricare HTML da endpoint.",
+                    "Requests JSON and passes the data to the callback.": "Richiede JSON e passa i dati al callback.",
+                    "Utility for literal string replacements.": "Utility per sostituzioni letterali su stringhe.",
+                    "Quick categories": "Categorie rapide",
+                    "Essential config": "Config essenziale",
+                    "cache busting": "bypass cache",
+                    "fallback route": "route di fallback",
+                    "managed menu": "menu gestito",
+                    "UI/data hook": "hook UI/dati",
+                    "section class": "classe sezioni",
+                    "target container": "container target",
+                    "onNavigate payload": "Payload di onNavigate",
+                    "Perfect for loading data per page or syncing custom navigation.": "Perfetto per caricare dati in base alla pagina o sincronizzare la navigazione custom.",
+                    "Event flow": "Flusso evento",
+                    "Architecture": "Architettura",
+                    "How FragmentJS works under the hood.": "Come lavora FragmentJS dietro le quinte.",
+                    "The engine combines HTML includes, lightweight routing and section management deterministically.": "Il motore unisce include HTML, routing leggero e gestione delle sezioni in modo deterministico.",
+                    "Include pipeline": "Pipeline include",
+                    "Find elements with the fragment attribute.": "Cerca elementi con attributo fragment.",
+                    "Fetch the HTML file and replace the element.": "Fetch del file HTML e replace dell'elemento.",
+                    "After all includes finish, the route runs.": "Al termine di tutti gli include, parte la route.",
+                    "In debug mode it appends": "In debug mode aggiunge",
+                    "to avoid cache.": "per evitare cache.",
+                    "Routing pipeline": "Pipeline routing",
+                    "Normalize the URL (path, query, hash).": "Normalizza l'URL (path, query, hash).",
+                    "Match the route and compute parameters.": "Matcha la route e calcola i parametri.",
+                    "Call onNavigate with the payload.": "Chiama onNavigate con il payload.",
+                    "Hide all sections and show only the target ones.": "Nasconde tutte le sezioni e mostra solo le target.",
+                    "Layer stack": "Layer stack",
+                    "Static UI (HTML/CSS)": "UI statiche (HTML/CSS)",
+                    "Include engine (fragment)": "Include engine (fragment)",
+                    "Routing + history": "Routing + history",
+                    "Data hooks (onNavigate)": "Hook dati (onNavigate)",
+                    "Route matching": "Match route",
+                    "Slot and layout": "Slot e layout",
+                    "If a container with": "Se esiste un container con",
+                    "the sections are moved there.": "le sezioni vengono spostate li.",
+                    "Otherwise, they go directly into the body.": "In alternativa, finiscono direttamente nel body.",
+                    "Useful to keep navbar and footer fixed within a single layout.": "Utile per mantenere navbar e footer fissi in un layout unico.",
+                    "Sections and naming": "Sezioni e naming",
+                    "Each route defines one or more sections. Names must match the HTML ids.": "Ogni route definisce una o piu sezioni. I nomi devono corrispondere agli id HTML.",
+                    "Sections are hidden with": "Le sezioni sono nascoste con",
+                    "and shown when the route is active.": "e mostrate quando la route e attiva.",
+                    "History listener": "Listener history",
+                    "The": "Il listener",
+                    "listener calls navigateTo to support back/forward.": "richiama navigateTo per supportare back/forward.",
+                    "This keeps navigation consistent with the URL.": "In questo modo la navigazione resta coerente con l'URL.",
+                    "Performance": "Performance",
+                    "No heavy runtime: just HTML fetches and controlled DOM swaps.": "Nessun runtime pesante: solo fetch HTML e DOM swap controllato.",
+                    "Compatibility": "Compatibilita",
+                    "Works well in legacy environments with jQuery already present.": "Funziona bene in ambienti legacy con jQuery gia presente.",
+                    "Control": "Controllo",
+                    "Layout and markup always under your control, without invasive abstractions.": "Layout e markup sempre sotto il tuo controllo, senza astrazioni invasive.",
+                    "Practical examples": "Esempi pratici",
+                    "Real snippets to get started.": "Snippet reali per iniziare subito.",
+                    "Here you will find typical setups: static pages, dynamic routes, and data loading with callbacks.": "Qui trovi configurazioni tipiche: pagine statiche, route dinamiche e carico dati con callback.",
+                    "Dynamic routes": "Route dinamiche",
+                    "Use params for detail pages. In the payload you will find": "Usa parametri per pagine di dettaglio. Nel payload trovi",
+                    "Modular includes": "Include modulare",
+                    "Each section lives in a dedicated HTML file, reusable and readable.": "Ogni sezione vive in un file HTML dedicato, riutilizzabile e leggibile.",
+                    "Tip: use names consistent with": "Suggerimento: usa nomi coerenti con",
+                    "Custom data hooks": "Hook dati custom",
+                    "Use": "Usa",
+                    "to initialize charts, fetches, or tables.": "per inizializzare grafici, fetch o tabelle.",
+                    "CTA + navigation": "CTA + navigazione",
+                    "Buttons can change routes without reloading the page.": "I bottoni possono cambiare route senza ricaricare la pagina.",
+                    "Pattern: docs": "Pattern: docs",
+                    "Pattern: dashboard": "Pattern: dashboard",
+                    "Pattern: wizard": "Pattern: wizard",
+                    "Load a fragment for each page and reuse the global layout.": "Carica un frammento per ogni pagina e riusa il layout globale.",
+                    "Fast navigation with data loaded based on the route.": "Navigazione rapida con dati caricati in base alla route.",
+                    "Step-by-step sections with routing and progression.": "Sezioni step-by-step con routing e progressivo.",
+                    "Nerd best practices": "Best practice nerd",
+                    "Keep sections small and reusable.": "Mantieni le sezioni piccole e riutilizzabili.",
+                    "Use routes with consistent menu for stable UI.": "Usa route con menu coerenti per UI stabile.",
+                    "Use debug mode only in development.": "Sfrutta il debug mode solo in sviluppo.",
+                    "Centralize data hooks in fragment.config.js.": "Centralizza i hook dati in fragment.config.js.",
+                    "FragmentJS • Lightweight library for HTML includes and routing.": "FragmentJS • Libreria leggera per includere e navigare senza framework.",
+                    "Language": "Lingua"
+                };
+
+                const itToEn = Object.keys(enToIt).reduce((acc, key) => {
+                    acc[enToIt[key]] = key;
+                    return acc;
+                }, {});
+
+                const skipTags = new Set(["CODE", "PRE", "SCRIPT", "STYLE"]);
+
+                function translateTextNodes(map) {
+                    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+                    let node;
+                    while ((node = walker.nextNode())) {
+                        const parentTag = node.parentElement ? node.parentElement.tagName : "";
+                        if (skipTags.has(parentTag)) {
+                            continue;
+                        }
+                        let text = node.nodeValue;
+                        if (!text || !text.trim()) {
+                            continue;
+                        }
+                        let updated = text;
+                        for (const from in map) {
+                            if (updated.includes(from)) {
+                                updated = updated.split(from).join(map[from]);
+                            }
+                        }
+                        if (updated !== text) {
+                            node.nodeValue = updated;
+                        }
+                    }
+                }
+
+                function setLanguage(lang) {
+                    if (lang === "it") {
+                        translateTextNodes(enToIt);
+                    } else {
+                        translateTextNodes(itToEn);
+                    }
+                }
+
+                const itBtn = document.getElementById("lang-it");
+                const enBtn = document.getElementById("lang-en");
+                if (itBtn && enBtn) {
+                    itBtn.addEventListener("click", () => setLanguage("it"));
+                    enBtn.addEventListener("click", () => setLanguage("en"));
+                }
+            })();
+        </script>
     </body>
 </html>
+
+
+

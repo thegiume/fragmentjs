@@ -1,0 +1,175 @@
+<section id="section-api" class="fragment hidden">
+    <div class="mx-auto max-w-6xl px-6 pb-20 pt-16">
+        <div class="flex flex-col gap-3 animate__animated animate__fadeInUp">
+            <p class="text-xs uppercase tracking-[0.35em] text-white">API Reference</p>
+            <h2 class="bg-linear-to-r from-white via-indigo-200 to-cyan-200 bg-clip-text text-3xl font-semibold text-transparent md:text-4xl">Full control in a few functions.</h2>
+            <p class="text-lg text-white">
+                FragmentJS APIs are intentionally minimal. Here you will find the public methods and config options.
+            </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="space-y-6">
+                <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)]">
+                    <h3 class="text-lg font-semibold text-white">Core methods</h3>
+                    <div class="mt-4 space-y-3 text-sm text-white">
+                        <div class="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+                            <p class="font-semibold text-white">FragmentJS.navigateTo(path, delay)</p>
+                            <p class="mt-1 text-white">Updates the URL and shows the route sections.</p>
+                            <div class="mt-3 flex flex-wrap gap-2 text-xs text-white">
+                                <span class="rounded-full border border-white/10 px-2 py-1">path: string</span>
+                                <span class="rounded-full border border-white/10 px-2 py-1">delay: number</span>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+                            <p class="font-semibold text-white">FragmentJS.refresh(delay)</p>
+                            <p class="mt-1 text-white">Reloads the current route without changing the URL.</p>
+                            <div class="mt-3 flex flex-wrap gap-2 text-xs text-white">
+                                <span class="rounded-full border border-white/10 px-2 py-1">delay?: number</span>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+                            <p class="font-semibold text-white">FragmentJS.loadIncludes()</p>
+                            <p class="mt-1 text-white">Re-reads all elements with the fragment attribute not yet included.</p>
+                            <div class="mt-3 flex flex-wrap gap-2 text-xs text-white">
+                                <span class="rounded-full border border-white/10 px-2 py-1">auto-start</span>
+                                <span class="rounded-full border border-white/10 px-2 py-1">idempotente</span>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+                            <p class="font-semibold text-white">FragmentJS.parseRoutePath(rawPath)</p>
+                            <p class="mt-1 text-white">Normalizes a URL into pathname, query, and hash.</p>
+                            <div class="mt-3 flex flex-wrap gap-2 text-xs text-white">
+                                <span class="rounded-full border border-white/10 px-2 py-1">return: object</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(14,165,233,0.55)]">
+                    <h3 class="text-lg font-semibold text-white">Includes and utilities</h3>
+                    <div class="mt-4 space-y-3 text-sm text-white">
+                        <div class="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+                            <p class="font-semibold text-white">FragmentJS.fetchInclude(file, element, callback)</p>
+                            <p class="mt-1 text-white">Loads an HTML file and replaces the original element.</p>
+                        </div>
+                        <div class="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+                            <p class="font-semibold text-white">FragmentJS.fetchHtml(url, callback)</p>
+                            <p class="mt-1 text-white">jQuery shortcut to load HTML from an endpoint.</p>
+                        </div>
+                        <div class="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+                            <p class="font-semibold text-white">FragmentJS.fetchJson(url, callback)</p>
+                            <p class="mt-1 text-white">Requests JSON and passes the data to the callback.</p>
+                        </div>
+                        <div class="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+                            <p class="font-semibold text-white">FragmentJS.replaceAllLiteral(input, search, replacement)</p>
+                            <p class="mt-1 text-white">Utility for literal string replacements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(129,140,248,0.5)]">
+                    <h3 class="text-lg font-semibold text-white">Quick categories</h3>
+                    <div class="mt-4 grid gap-3 text-sm text-white md:grid-cols-2">
+                        <div class="rounded-xl bg-slate-950/70 px-4 py-3">
+                            <p class="text-white">Routing</p>
+                            <p class="text-xs text-white">navigateTo, refresh</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-950/70 px-4 py-3">
+                            <p class="text-white">Include</p>
+                            <p class="text-xs text-white">loadIncludes, fetchInclude</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-950/70 px-4 py-3">
+                            <p class="text-white">Parsing</p>
+                            <p class="text-xs text-white">parseRoutePath</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-950/70 px-4 py-3">
+                            <p class="text-white">Utility</p>
+                            <p class="text-xs text-white">fetchHtml, fetchJson</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-linear-to-br from-slate-900/70 via-slate-900/90 to-cyan-500/20 p-6 shadow-[0_25px_80px_-45px_rgba(14,165,233,0.6)]">
+                    <h3 class="text-lg font-semibold text-white">Essential config</h3>
+                    <div class="mt-4 space-y-2 text-sm text-white">
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span class="text-white">debug</span>
+                            <span class="text-white">cache busting</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span class="text-white">fallbackRoute</span>
+                            <span class="text-white">fallback route</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span class="text-white">menuItem</span>
+                            <span class="text-white">managed menu</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span class="text-white">routes</span>
+                            <span class="text-white">path + section</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span class="text-white">onNavigate</span>
+                            <span class="text-white">UI/data hook</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span class="text-white">className</span>
+                            <span class="text-white">section class</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span class="text-white">slotSelector</span>
+                            <span class="text-white">target container</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)]">
+                    <h3 class="text-lg font-semibold text-white">onNavigate payload</h3>
+                    <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>{
+  route,      // matched route
+  params,     // parametri dinamici (es: :id)
+  path,       // pathname
+  query,      // query string
+  hash,       // hash
+  menuIndex   // indice menuItem
+}</code></pre>
+                    <p class="mt-3 text-sm text-white">
+                        Perfect for loading data per page or syncing custom navigation.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(217,70,239,0.5)]">
+                    <h3 class="text-lg font-semibold text-white">Event flow</h3>
+                    <div class="mt-4 grid gap-3 text-xs text-white">
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span>navigateTo()</span>
+                            <span class="text-white">parse → match</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span>onNavigate</span>
+                            <span class="text-white">payload</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span>Show section</span>
+                            <span class="text-white">appendTo slot</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-slate-950/70 px-4 py-3">
+                            <span>Scroll top</span>
+                            <span class="text-white">smooth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+

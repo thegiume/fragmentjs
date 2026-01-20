@@ -1,11 +1,13 @@
 window.FragmentJSConfig = {
     debug: false,
     fallbackRoute: '/',
-    menuItem: ['/', '/about', '/contatti'],
+    menuItem: ['/', '/guida', '/api', '/architettura', '/esempi'],
     routes: [
-        { path: '/', section: 'section-home', menu: '/' },
-        { path: '/about', section: 'section-about', menu: '/about' },
-        { path: '/contatti', section: 'section-contatti', menu: '/contatti' }
+        { path: '/', section: 'section-overview', menu: '/' },
+        { path: '/guida', section: 'section-guide', menu: '/guida' },
+        { path: '/api', section: 'section-api', menu: '/api' },
+        { path: '/architettura', section: 'section-architecture', menu: '/architettura' },
+        { path: '/esempi', section: 'section-examples', menu: '/esempi' }
     ],
     onNavigate: function (payload) {
         if (typeof window.fragmentCallback === 'function') {

@@ -1,0 +1,109 @@
+<section id="section-examples" class="fragment hidden">
+    <div class="mx-auto max-w-6xl px-6 pb-20 pt-16">
+        <div class="flex flex-col gap-3 animate__animated animate__fadeInUp">
+            <p class="text-xs uppercase tracking-[0.35em] text-white">Practical examples</p>
+            <h2 class="bg-linear-to-r from-white via-indigo-200 to-cyan-200 bg-clip-text text-3xl font-semibold text-transparent md:text-4xl">Real snippets to get started.</h2>
+            <p class="text-lg text-white">
+                Here you will find typical setups: static pages, dynamic routes, and data loading with callbacks.
+            </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)]">
+                <h3 class="text-lg font-semibold text-white">Dynamic routes</h3>
+                <p class="mt-2 text-sm text-white">
+                    Use params for detail pages. In the payload you will find <span class="text-white">params</span>.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>routes: [
+  { path: "/utenti", section: "section-utenti" },
+  { path: "/utenti/:id", section: "section-dettaglio-utente" }
+]</code></pre>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-white">
+                    <span class="rounded-full border border-white/10 px-2 py-1">params.id</span>
+                    <span class="rounded-full border border-white/10 px-2 py-1">path matcher</span>
+                </div>
+            </div>
+
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(14,165,233,0.55)]">
+                <h3 class="text-lg font-semibold text-white">Modular includes</h3>
+                <p class="mt-2 text-sm text-white">
+                    Each section lives in a dedicated HTML file, reusable and readable.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>&lt;section fragment="/sections/dashboard.html"&gt;&lt;/section&gt;
+&lt;section fragment="/sections/utenti.html"&gt;&lt;/section&gt;</code></pre>
+                <div class="mt-4 text-xs text-white">
+                    Tip: use names consistent with <span class="text-white">section-*</span>.
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-linear-to-br from-slate-900/70 via-slate-900/90 to-cyan-500/20 p-6 shadow-[0_25px_80px_-45px_rgba(14,165,233,0.6)]">
+                <h3 class="text-lg font-semibold text-white">Data hooks custom</h3>
+                <p class="mt-2 text-sm text-white">
+                    Usa <span class="text-white">onNavigate</span> to initialize charts, fetches, or tables.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>onNavigate: function (payload) {
+  if (payload.path === "/utenti") {
+    window.loadLogtoUsers?.();
+  }
+  if (payload.path.startsWith("/utenti/")) {
+    window.loadLogtoUserByPath?.(payload.path);
+  }
+}</code></pre>
+            </div>
+
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(217,70,239,0.5)]">
+                <h3 class="text-lg font-semibold text-white">CTA + navigation</h3>
+                <p class="mt-2 text-sm text-white">
+                    Buttons can change routes without reloading the page.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>&lt;button onclick="FragmentJS.navigateTo('/api')"&gt;
+  Vai alle API
+&lt;/button&gt;</code></pre>
+                <div class="mt-4 flex items-center gap-2 text-xs text-white">
+                    <span class="rounded-full border border-white/10 px-2 py-1">history.pushState</span>
+                    <span class="rounded-full border border-white/10 px-2 py-1">no reload</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_20px_60px_-40px_rgba(99,102,241,0.55)]">
+                <h3 class="text-lg font-semibold text-white">Pattern: docs</h3>
+                <p class="mt-2 text-sm text-white">
+                    Load a fragment for each page and reuse the global layout.
+                </p>
+            </div>
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_20px_60px_-40px_rgba(56,189,248,0.55)]">
+                <h3 class="text-lg font-semibold text-white">Pattern: dashboard</h3>
+                <p class="mt-2 text-sm text-white">
+                    Fast navigation with data loaded based on the route.
+                </p>
+            </div>
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_20px_60px_-40px_rgba(217,70,239,0.5)]">
+                <h3 class="text-lg font-semibold text-white">Pattern: wizard</h3>
+                <p class="mt-2 text-sm text-white">
+                    Step-by-step sections with routing and progression.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-10 rounded-3xl border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)]">
+            <h3 class="text-lg font-semibold text-white">Nerd best practices</h3>
+            <ul class="mt-4 grid gap-3 text-sm text-white md:grid-cols-2">
+                <li class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3">Keep sections small and reusable.</li>
+                <li class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3">Use routes with consistent menu for stable UI.</li>
+                <li class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3">Use debug mode only in development.</li>
+                <li class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3">Centralizza i Data hooks in fragment.config.js.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+

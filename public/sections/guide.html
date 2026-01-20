@@ -1,0 +1,149 @@
+<section id="section-guide" class="fragment hidden">
+    <div class="mx-auto max-w-6xl px-6 pb-20 pt-16">
+        <div class="flex flex-col gap-3 animate__animated animate__fadeInUp">
+            <p class="text-xs uppercase tracking-[0.35em] text-white">Practical guide</p>
+            <h2 class="bg-linear-to-r from-white via-indigo-200 to-cyan-200 bg-clip-text text-3xl font-semibold text-transparent md:text-4xl">Build your micro-site in a few steps.</h2>
+            <p class="text-lg text-white">
+                FragmentJS works on plain HTML: separate layout and sections, then let the router show only what is needed.
+            </p>
+        </div>
+
+        <div class="mt-10 flex flex-col gap-4">
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)]">
+                <h3 class="text-lg font-semibold text-white">1. Import the scripts</h3>
+                <p class="mt-2 text-sm text-white">Keep the order: jQuery, config, core.</p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="lib/js/fragment/fragment.config.js"&gt;&lt;/script&gt;
+&lt;script src="lib/js/fragment/fragment.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+            <div class="relative flex items-center justify-center py-2 animate__animated animate__fadeInUp animate__delay-1s">
+                <span class="absolute bottom-[-2px] flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-slate-950/80 text-white shadow-[0_0_18px_rgba(14,165,233,0.5)]">
+                    <i class="fa-solid fa-angle-down text-xs"></i>
+                </span>
+            </div>
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(14,165,233,0.55)]">
+                <h3 class="text-lg font-semibold text-white">2. Configure the routes</h3>
+                <p class="mt-2 text-sm text-white">Decide which sections to show for each path.</p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>window.FragmentJSConfig = {
+  fallbackRoute: "/",
+  menuItem: ["/", "/Guide", "/api"],
+  routes: [
+    { path: "/", section: "section-overview", menu: "/" },
+    { path: "/Guide", section: "section-guide", menu: "/Guide" },
+    { path: "/api", section: "section-api", menu: "/api" }
+  ]
+};</code></pre>
+            </div>
+            <div class="relative flex items-center justify-center py-2 animate__animated animate__fadeInUp animate__delay-1s">
+                <span class="absolute bottom-[-2px] flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-slate-950/80 text-white shadow-[0_0_18px_rgba(99,102,241,0.45)]">
+                    <i class="fa-solid fa-angle-down text-xs"></i>
+                </span>
+            </div>
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(129,140,248,0.55)]">
+                <h3 class="text-lg font-semibold text-white">3. Add the sections</h3>
+                <p class="mt-2 text-sm text-white">
+                    Each section is an HTML file with the <span class="text-white">fragment</span> and a unique id.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>&lt;section fragment="/sections/overview.html"&gt;&lt;/section&gt;
+&lt;section fragment="/sections/guide.html"&gt;&lt;/section&gt;</code></pre>
+            </div>
+            <div class="relative flex items-center justify-center py-2 animate__animated animate__fadeInUp animate__delay-1s">
+                <span class="absolute bottom-[-2px] flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-slate-950/80 text-white shadow-[0_0_18px_rgba(217,70,239,0.45)]">
+                    <i class="fa-solid fa-angle-down text-xs"></i>
+                </span>
+            </div>
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(217,70,239,0.5)]">
+                <h3 class="text-lg font-semibold text-white">4. Control the UI</h3>
+                <p class="mt-2 text-sm text-white">
+                    Use <span class="text-white">navigateTo</span> to change pages and <span class="text-white">refresh</span> to realign the UI.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>FragmentJS.navigateTo("/api");
+FragmentJS.refresh(200);</code></pre>
+            </div>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)]">
+                <h3 class="text-lg font-semibold text-white">
+                    <i class="fa-solid fa-sitemap mr-2"></i>
+                    File map
+                </h3>
+                <p class="mt-2 text-sm text-white">
+                    Organize the project by sections and config, so each page is isolated.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>public/
+├─ index.html
+├─ sections/
+│  ├─ overview.html
+│  ├─ guide.html
+│  ├─ api.html
+│  └─ ...
+└─ lib/
+   └─ js/fragment/
+      ├─ fragment.js
+      └─ fragment.config.js</code></pre>
+            </div>
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(14,165,233,0.55)]">
+                <h3 class="text-lg font-semibold text-white">
+                    <i class="fa-solid fa-list-check mr-2"></i>
+                    Pre-launch checklist
+                </h3>
+                <ul class="mt-4 grid gap-3 text-sm text-white">
+                    <li class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3">Fallback route configured.</li>
+                    <li class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3">Each section has an id and fragment class.</li>
+                    <li class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3">Menu matches menuItem.</li>
+                    <li class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3">Debug disabled in production.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-linear-to-br from-cyan-500/20 via-slate-900/60 to-slate-900/90 p-6 shadow-[0_25px_80px_-45px_rgba(14,165,233,0.6)]">
+                <h3 class="text-lg font-semibold text-white">
+                    <i class="fa-solid fa-plug mr-2"></i>
+                    Data hooks e menu
+                </h3>
+                <p class="mt-2 text-sm text-white">
+                    In <span class="text-white">onNavigate</span> you can load data, highlight the menu, or update the header.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>onNavigate: function (payload) {
+  fragmentCallback(payload.menuIndex);
+  setHeaderAction(payload.menuIndex);
+}</code></pre>
+            </div>
+            <div class="rounded-3xl animate__animated animate__fadeInUp border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(129,140,248,0.5)]">
+                <h3 class="text-lg font-semibold text-white">
+                    <i class="fa-solid fa-bug mr-2"></i>
+                    Debug mode
+                </h3>
+                <p class="mt-2 text-sm text-white">
+                    When <span class="text-white">debug</span> is enabled, FragmentJS appends a timestamp to includes to avoid cache.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-xs text-white"><code>window.FragmentJSConfig = {
+  debug: true
+};</code></pre>
+            </div>
+        </div>
+
+        <div class="mt-12 rounded-3xl border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl shadow-[0_25px_80px_-45px_rgba(59,130,246,0.6)]">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <h3 class="text-lg font-semibold text-white">Recommended workflow</h3>
+                <span class="text-xs uppercase tracking-[0.3em] text-white">from zero to prod</span>
+            </div>
+            <div class="mt-4 grid gap-4 md:grid-cols-4">
+                <div class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-white">1. Design the routes.</div>
+                <div class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-white">2. Create the section files.</div>
+                <div class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-white">3. Collega Data hooks.</div>
+                <div class="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-white">4. Test back/forward.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
