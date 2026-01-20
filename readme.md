@@ -1,35 +1,35 @@
-# FragmentJS - Esempio completo
+# FragmentJS - Complete Example
 
-Questo progetto e' un esempio completo e pronto all'uso della libreria
-FragmentJS. Puoi clonarlo, avviarlo e vedere subito la libreria in azione.
+This project is a complete, ready-to-run example of the FragmentJS library.
+Clone it, start it, and see the library in action right away.
 
-## Cos'e' FragmentJS
+## What is FragmentJS
 
-FragmentJS e' una libreria che permette di comporre pagine in modo modulare
-attraverso frammenti di HTML. Il progetto include una demo completa con
-documentazione ed esempi reali.
+FragmentJS is a library that lets you compose pages in a modular way using
+HTML fragments. This project includes a full demo with documentation and
+real-world examples.
 
-## Come usarla subito
+## Get started quickly
 
 ```bash
 npm install
 npm start
 ```
 
-Apri il browser su:
+Open the browser at:
 
 ```
 http://localhost:3000
 ```
 
-## Struttura essenziale
+## Essential structure
 
-- `public/` demo statica e documentazione
-- `public/lib/js/` libreria FragmentJS
-- `src/index.js` server Express che serve la demo
+- `public/` static demo and documentation
+- `public/lib/js/` FragmentJS library
+- `src/index.js` Express server that serves the demo
 
-## Note utili
+## Useful notes
 
-- Per integrare la libreria in un sito statico, copia i file in
-  `public/lib/js/fragment/` e includi lo script nella pagina.
-- La documentazione e gli esempi sono nella cartella `public/sections/`.
+- To integrate the library in a static site, copy the files in
+  `public/lib/js/fragment/` and include the script in the page.
+- Documentation and examples are in the `public/sections/` folder.
